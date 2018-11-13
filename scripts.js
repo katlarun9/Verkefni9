@@ -13,9 +13,9 @@ const program = (() => {
     }
   }
   function el(type, text) {
-    const element = document.createElement(type);  // eslint-disable-line
+    const element = document.createElement(type);
     if (text) {
-      element.appendChild(document.createTextNode(text));  // eslint-disable-line
+      element.appendChild(document.createTextNode(text));
     }
     return element;
   }
@@ -27,13 +27,13 @@ const program = (() => {
   function breyta(dagur) {
     const dags = new Date(dagur);
     const dag = dags.getDate();
-    const man = parseInt(dags.getMonth()) + 1;// eslint-disable-line
+    const man = parseInt(dags.getMonth()) + 1;  // eslint-disable-line
     const ar = dags.getFullYear();
-    dagur = `${ar}-${man}-${dag}`;// eslint-disable-line
+    dagur = `${ar}-${man}-${dag}`;  // eslint-disable-line
     return dagur;
   }
   function birta(dataObj, listi, key) {
-    const dlElement = document.createElement('dl');  // eslint-disable-line
+    const dlElement = document.createElement('dl');
     // console.log(key);
     if (key === 'registered') {
       dataObj[key] = breyta(dataObj[key]);  // eslint-disable-line
@@ -102,8 +102,8 @@ const program = (() => {
     const imageDiv = el('div');
     imageDiv.classList.add('loading');
     imageDiv.appendChild(img);
-    const loadtexti = document.createElement('p');  // eslint-disable-line
-    loadtexti.appendChild(document.createTextNode('Leita að léni...'));  // eslint-disable-line
+    const loadtexti = document.createElement('p');
+    loadtexti.appendChild(document.createTextNode('Leita að léni...'));
     imageDiv.appendChild(loadtexti);
     results.appendChild(imageDiv);
   }
@@ -124,7 +124,7 @@ const program = (() => {
   };
 })();
 
-document.addEventListener('DOMContentLoaded', () => {  // eslint-disable-line
-  const domains = document.querySelector('.domains');  // eslint-disable-line
+document.addEventListener('DOMContentLoaded', () => {
+  const domains = document.querySelector('.domains');
   program.init(domains);
 });
